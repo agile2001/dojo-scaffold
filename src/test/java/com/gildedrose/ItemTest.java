@@ -1,12 +1,14 @@
 package com.gildedrose;
 
-import org.junit.Test;
 
 import static com.gildedrose.Item.createBackstagePass;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 public class ItemTest {
+
     @Test
     public void should_increase_backstage_pass_quality_when_it_gets_close_to_expiration() {
         Item item = createBackstagePass(11, 20);
