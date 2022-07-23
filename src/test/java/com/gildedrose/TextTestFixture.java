@@ -1,7 +1,6 @@
 package com.gildedrose;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
-
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static com.gildedrose.Item.*;
@@ -13,7 +12,7 @@ public class TextTestFixture {
     }
 
     public static String overallTestResult(int days) {
-        ByteOutputStream out = new ByteOutputStream();
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream outputStream = new PrintStream(out);
 
         outputStream.println("OMGHAI!");
