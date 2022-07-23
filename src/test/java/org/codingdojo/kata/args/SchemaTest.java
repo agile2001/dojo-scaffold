@@ -1,15 +1,11 @@
 package org.codingdojo.kata.args;
 
+import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
+import static org.junit.Assert.assertThat;
 
 public class SchemaTest {
-
     @Test
     public void should_create_schema_out_of_text() {
         // 1. 用schema的描述字符串创建一个Schema对象
@@ -30,6 +26,7 @@ public class SchemaTest {
         //  调整现有的代码，以合适的形式在Schema内部保存数据
         //  注意不要过度设计，把数据保存好就行了
 
+
         // 4. 写一个断言，验证从Schema取出参数类型的逻辑正确
         //  只验证正确的情况，暂时不考虑错误（例如：参数名称不存在）的情况
         //  写最少的代码让测试通过
@@ -45,12 +42,10 @@ public class SchemaTest {
     // 请思考：
     //  这个测试应该叫什么名字？
     //  当尝试取出不存在的参数名称时，程序应该有什么行为？
-    @Test
+    @Test(expected = LabelNotFound.class)
     public void should_throw_exception_when_arg_label_does_not_exist() {
-        assertThrows(LabelNotFound.class, () -> {
-            Schema schema = new Schema("l:boolean p:integer d:string");
-            schema.typeOf("w");
-        });
+        Schema schema = new Schema("l:boolean p:integer d:string");
+        schema.typeOf("w");
     }
 
 
@@ -60,11 +55,9 @@ public class SchemaTest {
     // 请思考：
     //  这个测试应该叫什么名字？
     //  当传入多个同名参数的时候，程序应该有什么行为？
-    @Test
+    @Test(expected = InvalidSchema.class)
     public void should_reject_schema_with_label_conflict() {
-        assertThrows(InvalidSchema.class, () -> {
-            Schema schema = new Schema("l:boolean p:integer d:string p:string");
-        });
+        Schema schema = new Schema("l:boolean p:integer d:string p:string");
     }
 
     // 7. 想一想，接下来可以如何使用Schema对象？
