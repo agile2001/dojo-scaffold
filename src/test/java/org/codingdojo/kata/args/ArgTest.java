@@ -1,16 +1,19 @@
 package org.codingdojo.kata.args;
 
-import org.junit.Before;
-import org.junit.Test;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class ArgTest {
+
     private Schema schema;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         schema = new Schema("l:boolean p:integer d:string");
     }
@@ -22,9 +25,11 @@ public class ArgTest {
         assertThat(new Arg(schema, "-d /usr/log").value(), is("/usr/log"));
     }
 
-    @Test(expected = LabelNotFound.class)
+    @Test
     public void should_reject_undefined_arg() {
-        new Arg(schema, "-w 123");
+        Assertions.assertThrows(LabelNotFound.class, () -> {
+            new Arg(schema, "-w 123");
+        });
     }
 
     @Test
