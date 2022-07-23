@@ -1,11 +1,12 @@
 package org.codingdojo.kata;
 
-import org.junit.Test;
 
 import static org.codingdojo.kata.Direction.NORTH;
 import static org.codingdojo.kata.Direction.SOUTH;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
 
 public class RoverTest {
     @Test
