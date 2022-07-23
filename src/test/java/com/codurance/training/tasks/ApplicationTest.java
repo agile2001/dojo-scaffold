@@ -6,15 +6,18 @@ import java.io.InputStreamReader;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintWriter;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+
 
 import static java.lang.System.lineSeparator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public final class ApplicationTest {
+
     public static final String PROMPT = "> ";
     private final PipedOutputStream inStream = new PipedOutputStream();
     private final PrintWriter inWriter = new PrintWriter(inStream, true);
@@ -31,13 +34,13 @@ public final class ApplicationTest {
         applicationThread = new Thread(taskList);
     }
 
-    @Before public void
-    start_the_application() {
+    @BeforeEach
+    public void start_the_application() {
         applicationThread.start();
     }
 
-    @After public void
-    kill_the_application() throws IOException, InterruptedException {
+    @AfterEach
+    public void kill_the_application() throws IOException, InterruptedException {
         if (!stillRunning()) {
             return;
         }
@@ -51,8 +54,9 @@ public final class ApplicationTest {
         throw new IllegalStateException("The application is still running.");
     }
 
-    @Test(timeout = 1000) public void
-    it_works() throws IOException {
+    @Test
+    @Timeout(1000)
+    public void it_works() throws IOException {
         execute("show");
 
         execute("add project secrets");
