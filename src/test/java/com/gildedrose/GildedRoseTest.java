@@ -1,15 +1,17 @@
 package com.gildedrose;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 public class GildedRoseTest {
 
     @Test
     public void foo() {
-        Item[] items = new Item[] {new Item("foo", 1, 5)};
+        Item[] items = new Item[]{new Item("foo", 1, 5)};
         GildedRose app = new GildedRose(items);
         app.passOneDay();
         assertEquals("foo", app.items[0].name);
