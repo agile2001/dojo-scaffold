@@ -7,7 +7,7 @@ plugins {
 group 'org.codingdojo.kata'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 17
 
 repositories {
     maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
