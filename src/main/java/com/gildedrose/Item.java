@@ -31,6 +31,10 @@ public class Item {
         }
     }
 
+    protected void increaseQuality() {
+        quality = quality + 1;
+    }
+
     protected void updateQualityAfterExpiration() {
         if (quality > 0) {
             quality = quality - 1;
