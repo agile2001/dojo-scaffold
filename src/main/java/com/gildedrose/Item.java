@@ -16,18 +16,6 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    protected boolean isSulfuras() {
-        return false;
-    }
-
-    protected boolean isAgedBrie() {
-        return false;
-    }
-
-    protected boolean isBackstagePass() {
-        return false;
-    }
-
     public void passOneDay() {
         updateSellInDays();
         updateQuality();
