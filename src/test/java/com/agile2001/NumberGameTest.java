@@ -10,9 +10,9 @@ public class NumberGameTest {
         // 3 Given
         int number = 1;
         // 2 When
-        String expect = new GameNumber(number).execute();
+        String result = new GameNumber(number).execute();
         // 1 Then
-        Assertions.assertEquals("1", expect);
+        Assertions.assertEquals("1", result);
     }
 
     @Test
