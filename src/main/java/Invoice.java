@@ -9,4 +9,12 @@ public class Invoice {
         this.customer = customer;
         this.performances = performances;
     }
+
+    int calculateCredits() {
+        return performances.stream().mapToInt(Performance::calculateVolumeCredits).sum();
+    }
+
+    int calculateTotalAmount() {
+        return performances.stream().mapToInt(Performance::calculateTotalAmount).sum();
+    }
 }
