@@ -1,23 +1,10 @@
-# 练功房脚手架
+# Simplified Theatrical Players Refactoring Kata
 
-如果你恰好也用Java做练功房的练习，可以从这个脚手架开始入手。
+This is a refactoring kata based on the refactoring-split-phase(https://github.com/gregorriegler/refactoring-split-phase).
 
-准备步骤：
+#
 
-* `git clone https://github.com/agile2001/dojo-scaffold.git`
-* `mv dojo-scaffold my_kata && cd my_kata`
-* `./gradlew clean build`
-  * 如果你使用Windows，这一步应该是 `gradlew.bat clean build`
+This is a simplified version of the Theatrical Players Refactoring Kata to practice a Split Phase refactoring.
 
-此时你应该看到成功的build：
-
-```
-$ ./gradlew clean build
-
-BUILD SUCCESSFUL in 1s
-4 actionable tasks: 4 executed
-```
-
-用Intellij IDEA导入工程，运行全部测试，你应该看到绿条。
-
-从这里开始你的Dojo练习。
+Credit goes to Martin Fowler & Emily Bache for providing the original Code.
+Find the original version from the Refactoring Book here: https://github.com/emilybache/Theatrical-Players-Refactoring-Kata
