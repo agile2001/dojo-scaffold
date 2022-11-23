@@ -16,7 +16,8 @@ public class TheatricalPlayersTests {
             new Performance(new Play("As You Like It", "comedy"), 35),
             new Performance(new Play("Othello", "tragedy"), 40)));
 
-        TheatricalPlayers theatricalPlayers = new TheatricalPlayers();
+        TheatricalPlayers theatricalPlayers = new TheatricalPlayers(new TotalAmountCalculate(),
+            new VolumeCreditsCalculator(), new InvoiceFormatter());
         var result = theatricalPlayers.print(invoice);
 
         verify(result);
