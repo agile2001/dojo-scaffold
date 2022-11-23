@@ -1,10 +1,16 @@
+import type.AbstractPlay;
+
 public class Play {
 
-    public String name;
-    public String type;
+    private String name;
+    private AbstractPlay abstractPlay;
 
-    public Play(String name, String type) {
+    public Play(String name, AbstractPlay abstractPlay) {
         this.name = name;
-        this.type = type;
+        this.abstractPlay = abstractPlay;
+    }
+
+    public int calculateVolumeCredits(int audience) {
+        return abstractPlay.calculateCredits(audience);
     }
 }
