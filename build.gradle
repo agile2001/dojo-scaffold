@@ -25,7 +25,9 @@ dependencies {
     testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
 
     testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '7.9.0'
+//    testImplementation group: 'io.cucumber', name: 'cucumber-java8', version: '7.9.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.9.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit-platform-engine', version: '7.9.0'
 
     testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '4.9.0'
 
